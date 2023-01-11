@@ -1,0 +1,18 @@
+<div class="notice">
+  <%= flash[:notice] %>
+</div>
+
+<p>
+  <strong>タイトル:</strong><%= @book.title %>
+</p>
+
+<p>
+  <strong>本体:</strong><%= @book.body %>
+</p>
+
+
+<div class ="link">
+  <p>|</p>
+  <%= link_to '戻る', "/books" %>
+</div>
+
