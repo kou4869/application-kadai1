@@ -1,6 +1,5 @@
 <h1>Editing Book</h1>
-
-<%= form_with model: @book do |b| %>
+<%= form_with model: @book,url: update_book_path(@book.id), medhot: :patch do |b| %>
 
   <div class="edit-item">
     <p>Title</p>
