@@ -2,18 +2,22 @@
   <%= flash[:notice] %>
 </div>
 
-<p>
-  <strong>タイトル:</strong><%= @book.title %>
+<p class="show-text">
+  <strong>Title:</strong> <%= @book.title %>
 </p>
 
-<p>
-  <strong>本体:</strong><%= @book.body %>
+<p class="show-text">
+  <strong>Body:</strong> <%= @book.body %>
 </p>
 
 
-<div class ="link">
-  <%= link_to 'Edit', "/books/#{@book.id}/edit" %>
-  <p>|</p>
-  <%= link_to 'Back', "/books" %>
+<div class="link">
+  <a class="link-item">
+    <%= link_to 'Edit', "/books/#{@book.id}/edit" %>
+  </a>
+   | 
+  <a class="link-item">
+    <%= link_to 'Back', "/books" %>
+  </a>
 </div>
 

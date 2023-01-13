@@ -1,12 +1,8 @@
-<div class="notice">
-  <%= flash[:notice] %>
-</div>
-
 <h1>Books</h1>
 
 <table>
   <thead>
-    <tr class=>
+    <tr>
       <th>Title</th>
       <th>Body</th>
       <th colspan="3"></th>
@@ -31,25 +27,31 @@
 
 <h2>New book</h2>
 <%= form_with model: @book do |b| %>
-  <div class="error-message">
-    <% if @book.errors.any? %>
-      <p><strong>
-        <%= @book.errors.count %> error prohibited this book from being saved:
-      </strong></p>
-      <ul>
-        <% @book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
+
+  <div class="create">
+    <span class="field_with_errors">
+      <% if @book.errors.any? %>
+        <h5>
+          <%= @book.errors.count %> error prohibited this book from being saved:
+        </h5>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li>・<%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </span>
+
+  
+    <p>Title</p>
+    <div class="field"><%= b.text_field :title %></div>
+
+    <p>Body</p>
+    <div class="field"><%= b.text_area :body %></div>
+
+    <div class="submit-button">
+      <%= b.submit 'Create Book' %>
+    </div>
   </div>
-
-  <p>Title</p>
-  <%= b.text_field :title %>
-
-  <p>Body</p>
-  <%= b.text_area :body %>
-
-  <%= b.submit 'Create Book' %>
 
 <% end %>
