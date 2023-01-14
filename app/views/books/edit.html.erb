@@ -1,5 +1,5 @@
 <h2>Editing Book</h2>
-<%= form_with model: @book,url: update_book_path(@book.id), medhot: :patch do |b| %>
+<%= form_with model: @book,url: book_path(@book.id), method: :patch do |b| %>
 
   <div class="create">
     <span class="field_with_errors">
@@ -8,7 +8,7 @@
           <%= @book.errors.count %>error prohibited this book from being saved:
         </h5>
         <ul>
-          <%= @book.errors.full_messages.each do |message| %>
+          <% @book.errors.full_messages.each do |message| %>
             <li>・<%= message %></li>
           <% end %>
         </ul>
@@ -29,9 +29,9 @@
 
   <div class ="link">
     <a class="link-item">
-      <%= link_to 'Show', "/books/#{@book.id}" %>
+      <%= link_to 'Show', book_path(@book.id) %>
        | 
-      <%= link_to 'Back', "/books" %>
+      <%= link_to 'Back', books_path %>
     </a>
   </div>
 

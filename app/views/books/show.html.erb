@@ -13,11 +13,11 @@
 
 <div class="link">
   <a class="link-item">
-    <%= link_to 'Edit', "/books/#{@book.id}/edit" %>
+    <%= link_to 'Edit', edit_book_path(@book.id) %>
   </a>
    | 
   <a class="link-item">
-    <%= link_to 'Back', "/books" %>
+    <%= link_to 'Back', books_path %>
   </a>
 </div>
 
